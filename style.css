@@ -1,0 +1,14 @@
+
+body {
+	background-image: url("http://i.imgur.com/2GUd2Nd.jpg");
+}
+
+.jumbotron {
+	opacity: .5;
+	margin-top: 30px;
+	padding-top: 5px;
+}
+
+.textJumbo {
+	color: rgba(0, 0, 0, 1);
+}
