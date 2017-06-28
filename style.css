@@ -1,14 +1,49 @@
 
 body {
 	background-image: url("http://i.imgur.com/2GUd2Nd.jpg");
+	background-repeat: no-repeat;
+	
 }
 
 .jumbotron {
-	opacity: .5;
+	opacity: .7;
 	margin-top: 30px;
 	padding-top: 5px;
 }
 
 .textJumbo {
 	color: rgba(0, 0, 0, 1);
+	
+}
+
+a {
+	color: black;
+	font-family: 'Arvo', serif;
+}
+
+.slothText {
+	font-family: 'Arvo', serif;
+	border-bottom: 1px solid #8c8b8b;
+	color: #EAE701;
+}
+
+.slothText1 {
+	font-family: 'Arvo', serif;
+	font-size: 23px;
+}
+
+.btn {
+	font-family: 'Arvo', serif;
+}
+
+h2 {
+	font-family: 'Arvo', serif;
+}
+
+h3 {
+	font-family: 'Arvo', serif;
+}
+
+h4 {
+	font-family: 'Arvo', serif;
 }
