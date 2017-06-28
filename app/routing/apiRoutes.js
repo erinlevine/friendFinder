@@ -33,12 +33,58 @@ module.exports = function(app) {
   // Then the server saves the data to the tableData array)
   // ---------------------------------------------------------------------------
 
+var differenceArray = [];
+
+var scoresArray = [];
+
+
   app.post("/api/friends", function(req, res) {
     // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
     // It will do this by sending out the value "true" have a table
     friendsData.push(req.body);
     //This is where we will match and return the best match for user:
+    var surveyArray = req.body.surveyResults;
 
+    scoresArray = []; 
+
+    for(var i = 0; i < friendsData.length; i++){
+
+      var currentArray = friendsData[i].surveyResults;
+
+      console.log("Results: " + friendsData[i].surveyResults)
+      console.log("Survery Results: " + surveyArray);
+
+      differenceArray = [];
+
+      for(var n = 0; n < currentArray.length; n++){
+        var difference = surveyArray[n] - currentArray[n];
+        console.log("Difference: " + difference);
+        differenceArray.push(Math.abs(difference));
+
+
+
+      }
+
+      console.log("Difference Array: " + differenceArray);
+
+      var scoreTotal = differenceArray.reduce(function(a ,b){
+        return a+b;
+
+      });
+      scoresArray.push(scoreTotal);
+      console.log("Scores Array: " + scoresArray);
+      
+    }
+
+    var index = 0;
+    var value = scoresArray[0];
+      for (var m = 1; m < scoresArray.length; m++){
+        if (scoresArray[m] < value) {
+          value = scoreTotal[m];
+          index = m;
+        }
+      }
+     console.log("Value: " + value + " Index: " + index); 
    
   });
 
