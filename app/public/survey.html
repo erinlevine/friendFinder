@@ -6,7 +6,7 @@
 
 	<!-- Latest compiled and minified CSS & JS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<link rel="stylesheet" href="style.css">
+	<!-- <link rel="stylesheet" href="style.css"> -->
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
@@ -15,7 +15,7 @@
 	
 	<link href="https://fonts.googleapis.com/css?family=Arvo:400,700" rel="stylesheet">
 	
-	<script src="serverQuestions.js"></script>
+	<!-- <script src="serverQuestions.js"></script> -->
 
 </head>
 <body>
@@ -230,13 +230,13 @@ var userData = {
 
 	    	// AJAX post the data to the friends API. 
 	    	$.post(currentURL + "/api/friends", userData, function(data){
+	    		console.log(data);
+	    		//Grab the result from the AJAX post so that the best match's name and photo are displayed.
+	    		$("#matchName").text(data.friendName);
+	    		$('#matchImg').attr("src", data.friendPicture);
 
-	    		// Grab the result from the AJAX post so that the best match's name and photo are displayed.
-	    		// $("#matchName").text(data.name);
-	    		// $('#matchImg').attr("src", data.photo);
-
-		    	// // Show the modal with the best match 
-		    	// $("#resultsModal").modal('toggle');
+		    	// Show the modal with the best match 
+		    	$("#resultsModal").modal('toggle');
 
 	    	});
 

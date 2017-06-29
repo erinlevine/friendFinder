@@ -47,7 +47,7 @@ var scoresArray = [];
 
     scoresArray = []; 
 
-    for(var i = 0; i < friendsData.length; i++){
+    for(var i = 0; i < friendsData.length-1; i++){
 
       var currentArray = friendsData[i].surveyResults;
 
@@ -85,6 +85,8 @@ var scoresArray = [];
         }
       }
      console.log("Value: " + value + " Index: " + index); 
+     console.log(friendsData[index]);
+     res.json(friendsData[index]);
    
   });
 
