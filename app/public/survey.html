@@ -6,7 +6,9 @@
 
 	<!-- Latest compiled and minified CSS & JS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 	<!-- <link rel="stylesheet" href="style.css"> -->
+
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
@@ -15,10 +17,14 @@
 	
 	<link href="https://fonts.googleapis.com/css?family=Arvo:400,700" rel="stylesheet">
 	
-	<!-- <script src="serverQuestions.js"></script> -->
+	
+
+	
+	
 
 </head>
 <body>
+
 
 	<div class="container">
 
@@ -40,7 +46,7 @@
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="3">3 (Neither Agree or Disagree)</option>
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
@@ -51,7 +57,7 @@
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="3">3 (Neither Agree or Disagree)</option>
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
@@ -63,7 +69,7 @@
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="3">3 (Neither Agree or Disagree)</option>
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
@@ -75,7 +81,7 @@
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="3">3 (Neither Agree or Disagree)</option>
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
@@ -87,7 +93,7 @@
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="3">3 (Neither Agree or Disagree)</option>
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
@@ -99,7 +105,7 @@
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="3">3 (Neither Agree or Disagree)</option>
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
@@ -111,7 +117,7 @@
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="3">3 (Neither Agree or Disagree)</option>
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
@@ -122,7 +128,7 @@
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="3">3 (Neither Agree or Disagree)</option>
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
@@ -133,7 +139,7 @@
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="3">3 (Neither Agree or Disagree)</option>
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
@@ -144,7 +150,7 @@
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="3">3 (Neither Agree or Disagree)</option>
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
@@ -154,12 +160,12 @@
 
 		<!-- Submit Button -->
 		<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
- Submit</button>
+ Find Your Friend!</button>
 
 		<hr>
 	    <footer class="footer">
 	      <div class="container">
-		        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
+		        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/erinlevine/friendFinder">GitHub Repo</a></p>
 	      </div>
 	    </footer>
 
@@ -173,14 +179,14 @@
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal">&times;</button>
-	        <h2 class="modal-title"><strong>Best Match</strong></h2>
+	        <h2 class="modal-title"><strong>Your New Best Friend!</strong></h2>
 	      </div>
 	      <div class="modal-body">
 	        <h2 id="matchName"></h2>
 	        <img id="matchImg" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Exit</button>
 	      </div>
 	    </div>
 
@@ -188,35 +194,14 @@
 	</div>
 
 
+
 </body>
-
-</html>
-
 
 
 <script>
 
 $("#submit").on("click", function(){
-
-    	// Form validation
-    	function validateForm() {
-		  var isValid = true;
-		  $('.form-control').each(function() {
-		    if ( $(this).val() === '' )
-		        isValid = false;
-		  });
-
-		  $('.chosen-select').each(function() {
-
-		  	if( $(this).val() === "")
-		  		isValid = false
-		  })
-		  return isValid;
-		}
-
-		// If all required fields are filled
-		if (validateForm() == true)
-		{
+ 
 
 var userData = {
 	    		friendName: $("#name").val(),
@@ -240,13 +225,12 @@ var userData = {
 
 	    	});
 
-	    }
-		else
-		{
-			alert("Please fill out all fields before submitting!");
-		}
-    	
-    	return false;
+
     });
 
 </script>
+
+</html>
+
+
+
