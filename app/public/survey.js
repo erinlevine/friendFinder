@@ -16,7 +16,7 @@ var userData = {
 	    		console.log(data);
 	    		//Grab the result from the AJAX post so that the best match's name and photo are displayed.
 	    		$("#friendName").text(data.friendName);
-	    		$('#matchImg').attr("src", data.friendPicture);
+	    		$('#friendPicture').attr("src", data.friendPicture);
 
 		    	// Show the modal with the best match 
 		    	$("#resultsModal").modal('toggle');
