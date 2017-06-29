@@ -37,23 +37,29 @@ var differenceArray = [];
 
 var scoresArray = [];
 
-
+//POST request:
   app.post("/api/friends", function(req, res) {
-    // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
-    // It will do this by sending out the value "true" have a table
+    
+    //Taking our friends data and pushing it:
     friendsData.push(req.body);
-    //This is where we will match and return the best match for user:
+    
+    //Creating a new variable that will hold the users answers.
     var surveyArray = req.body.surveyResults;
 
+    //Creating an empty array for the scores
     scoresArray = []; 
 
+    //Creating a loop that goes through the the friendsData. 
     for(var i = 0; i < friendsData.length-1; i++){
+
 
       var currentArray = friendsData[i].surveyResults;
 
+      //Just for testing purposes:
       console.log("Results: " + friendsData[i].surveyResults)
-      console.log("Survery Results: " + surveyArray);
+      console.log("Survey Results: " + surveyArray);
 
+      //An array that shows the difference using the Math.abs(difference):
       differenceArray = [];
 
       for(var n = 0; n < currentArray.length; n++){
@@ -67,17 +73,21 @@ var scoresArray = [];
 
       console.log("Difference Array: " + differenceArray);
 
+      //Below is how we find the total of all the scores:
       var scoreTotal = differenceArray.reduce(function(a ,b){
         return a+b;
 
       });
+      //Pushing the scoreTotal that we just figured out into the scoresArray:
       scoresArray.push(scoreTotal);
       console.log("Scores Array: " + scoresArray);
       
     }
 
-    var index = 0;
-    var value = scoresArray[0];
+    //Block of code is what we use to find the lowest score AKA the matched friend:
+    var index = 0; //Keeps track of what index the best friend is
+    var value = scoresArray[0]; //Keeps track of the score
+      //Creating a loop that starts at 1 because we use 0 in our condition. This loop goes through the scoresArray. 
       for (var m = 1; m < scoresArray.length; m++){
         if (scoresArray[m] < value) {
           value = scoreTotal[m];
@@ -86,6 +96,7 @@ var scoresArray = [];
       }
      console.log("Value: " + value + " Index: " + index); 
      console.log(friendsData[index]);
+     //Adding it to JSON.
      res.json(friendsData[index]);
    
   });
