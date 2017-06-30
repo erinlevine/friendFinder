@@ -52,7 +52,7 @@
 		<h4>Your Name:</h4>
 		<input type="text" id="name" class="form-control">
 
-		<h4>Your Photo:</h4>
+		<h4>Your Photo (a URL, please!):</h4>
 		<input type="text" id="photo" class="form-control">
 
 		<hr>
@@ -214,38 +214,48 @@
 
 </body>
 
-
 <script>
+	function getSurveyResults(){
+		//This function just gets the results for the user's answers:
+	
+		var results = [];
+		$(".chosen-select").each(function(i, element){
+			results.push($(element).val());
+		});
+		return results;
+	}
 
-$("#submit").on("click", function(){
- 
+	function submitUserData(userData){
+		//This function just posts the answers to the API:
+		
+		var friendApiUrl = window.location.origin + '/api/friends';
+		
+		
+		$.post(friendApiUrl, userData, function(data){
+			console.log(data);
 
-var userData = {
-	    		friendName: $("#name").val(),
-	    		friendPicture: $("#photo").val(),
-	    		surveyResults: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
-	    	}
+			//Grabbing the results:
+			$("#friendName").text(data.friendName);
+			$('#friendPicture').attr("src", data.friendPicture);
 
-
-	    	// Grab the URL of the website
-	    	var currentURL = window.location.origin;
-
-	    	// AJAX post the data to the friends API. 
-	    	$.post(currentURL + "/api/friends", userData, function(data){
-	    		console.log(data);
-	    		//Grab the result from the AJAX post so that the best match's name and photo are displayed.
-	    		$("#friendName").text(data.friendName);
-	    		$('#friendPicture').attr("src", data.friendPicture);
-
-		    	// Show the modal with the best match 
-		    	$("#resultsModal").modal('toggle');
-
-	    	});
-
-
-    });
-
+			//Showing modal:
+			$("#resultsModal").modal('toggle');
+		});
+	}
+	$("#submit").on("click", function(){
+	 
+		var userData = {
+			friendName: $("#name").val(),
+			friendPicture: $("#photo").val(),
+			surveyResults: getSurveyResults()
+		}
+		
+		submitUserData(userData);
+	});
 </script>
+
+
+
 
 </html>
 
